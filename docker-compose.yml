@@ -7,13 +7,15 @@ services:
     depends_on:
       - postgres
     env_file:
-      - /home/developer/.env.dev
+      - .env
+    volumes:
+      - ./sources:/app
 
   postgres:
     image: postgres:13.3
-#    volumes:
-#      - postgres_volume:/var/lib/postgresql/data/
-    environment:
-      POSTGRES_DB: "gemstones"
-      POSTGRES_USER: "test"
-      POSTGRES_PASSWORD: "test"
+    volumes:
+      - ./temp/postgres:/var/lib/postgresql/data/
+    env_file:
+      - .env
+    ports:
+      - 15432:5432
