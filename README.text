@@ -1,7 +1,14 @@
 # gemstone-store
 
-клонировать проект из гит git clone git@github.com:varias070/gemstone-store.git
+клонировать проект из гит git clone git@github.com:varias070/gemstone-store.git 
+
+
 перейти в дерикторию проекта cd gemstone-store
+
+необходимо: 
+  создать фай .env
+  перенести содержимое файла .env.dev в  .env
+  
 выполнить: 
   docker-compose build
   docker-compose up
